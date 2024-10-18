@@ -59,3 +59,4 @@ docker run -it \
   --security-opt seccomp=unconfined \
   hrcnthu/camera_ros:ipc-20.04 \
   bash
+  
