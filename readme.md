@@ -14,7 +14,7 @@ $: means command use in terminal
 ## 1.Clone the repo
 ```
 $ cd ~
-$ git clone --recursive git@github.com:wellyowo/Deep_learning_d415.git
+$ git clone --recursive git@github.com:hrc-pme/Deep_learning_d415.git
 ```
 * --recursive is the must have procedure for clone the submodule
 
