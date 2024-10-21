@@ -32,8 +32,8 @@ $ git submodule update --init --recursive
 ```
 $ cd ~/Deep_learning_d415
 ~/Deep_learning_d415$ source gpu_run.sh / source cpu_run.sh
-~/Deep_learning_d415# cd catkin_ws/src
- ~/Deep_learning_d415/catkin_ws/src# catkin build 
+~/Deep_learning_d415# cd catkin_ws
+ ~/Deep_learning_d415/catkin_ws# catkin build 
 ```
 ## 4. Check camera serial number and fill in the camera launch file (do in the same terminal after 3.)
 * Please connect the D415 camera first
