@@ -75,7 +75,7 @@ $ cd ~/Deep_learning_d415
 ```
 $ cd ~/Deep_learning_d415
 ~/Deep_learning_d415$ source docker_join.sh 
-~/Deep_learning_d415# source check_D415.sh
+~/Deep_learning_d415# source check_d415.sh
 ```
 
 ## Terminal 4: Record a rosbag
