@@ -22,9 +22,10 @@ $ git clone --recursive git@github.com:hrc-pme/Deep_learning_d415.git
 ## 2.Update repo and submodules
 
 ```
-$ git pull
-$ git submodule sync --recursive
-$ git submodule update --init --recursive
+$ cd ~/Deep_learning_d415
+~/Deep_learning_d415$ git pull
+~/Deep_learning_d415$ git submodule sync --recursive
+~/Deep_learning_d415$ git submodule update --init --recursive
 ```
 
 ## 3. Build ROS workspace
