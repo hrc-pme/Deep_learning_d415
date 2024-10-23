@@ -35,7 +35,13 @@ $ cd ~/Deep_learning_d415
 ~/Deep_learning_d415# cd catkin_ws
  ~/Deep_learning_d415/catkin_ws# catkin build 
 ```
-## 4. Check camera serial number and fill in the camera launch file (do in the same terminal after 3.)
+## 4. Copy the usb rule to machine
+```
+$ cd ~/Deep_learning_d415
+~/Deep_learning_d415$ cp .99-realsense-libusb.rules /etc/udev/rules.d/99-realsense-libusb.rules
+``` 
+
+## 5. Check camera serial number and fill in the camera launch file (do in the same terminal after 3.)
 * Please connect the D415 camera first
 ```
  ~/Deep_learning_d415/catkin_ws/src# cd ~/Deep_learning_d415
