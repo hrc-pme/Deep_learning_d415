@@ -10,6 +10,7 @@ from detectron2.data import MetadataCatalog
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
+import time
 
 class RealTimeInferenceNode:
     def __init__(self):
@@ -31,9 +32,12 @@ class RealTimeInferenceNode:
         self.detection_pub = rospy.Publisher("/camera/color/image_detection/compressed", CompressedImage, queue_size=1)
         
         # Timer for inference at 1 Hz
-        self.timer = rospy.Timer(rospy.Duration(1.0), self.timer_callback)  # 1 Hz timer
+        self.timer = rospy.Timer(rospy.Duration(0.2), self.timer_callback)  # 1 Hz timer
 
-        self.current_image = None  # Store the latest image for inference
+        # Variables for performance evaluation
+        self.current_image = None
+        self.inference_times = []
+        self.start_time = None
 
     def image_callback(self, msg):
         # Convert ROS Image message to OpenCV format
@@ -42,10 +46,23 @@ class RealTimeInferenceNode:
 
     def timer_callback(self, event):
         if self.current_image is not None:
+            # Start timing
+            self.start_time = time.time()
+            
             # Run inference on the latest image
             outputs = self.predictor(self.current_image)
             # Draw bounding boxes, masks, and labels
             annotated_image = self.draw_detections(outputs)
+
+            # Stop timing
+            end_time = time.time()
+            inference_duration = end_time - self.start_time
+            self.inference_times.append(inference_duration)
+
+            # Print current and average inference time
+            avg_inference_time = sum(self.inference_times) / len(self.inference_times)
+            rounded_duration = round(inference_duration, 1)
+            rospy.loginfo(f"Inference Time: {inference_duration:.4f} s, you can set your timer duration to {rounded_duration:.1f} in code")
 
             # Convert annotated image to CompressedImage message and publish
             self.publish_detection(annotated_image)
