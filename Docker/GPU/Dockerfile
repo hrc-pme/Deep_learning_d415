@@ -171,8 +171,8 @@ RUN pip3 install \
     wheel 
 
 RUN pip3 install \
-    torch==1.7.1+cu110 \
-    torchvision==0.8.2+cu110 \
+    torch==2.0.0+cu118 \
+    torchvision==0.15.1+cu118 \
     -f https://download.pytorch.org/whl/torch_stable.html
 
 RUN pip3 install \
@@ -248,9 +248,9 @@ RUN cd ${HOME} && git clone https://github.com/IntelRealSense/librealsense.git \
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
     xdotool \
     wmctrl
-####################################################################################################
-
-##############################install 3D rotations and spatial transformations made easy with RoMa################################
+###################################### install detectron2 ################################################
+RUN python3 -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
+############################## install 3D rotations and spatial transformations made easy with RoMa ################################
 RUN pip3 install roma
 
 RUN echo "root ALL=(ALL)  ALL" >> /etc/sudoers \
