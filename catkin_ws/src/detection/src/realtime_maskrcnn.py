@@ -31,8 +31,8 @@ class RealTimeInferenceNode:
         # Publisher for annotated output
         self.detection_pub = rospy.Publisher("/camera/color/image_detection/compressed", CompressedImage, queue_size=1)
         
-        # Timer for inference at 1 Hz
-        self.timer = rospy.Timer(rospy.Duration(0.2), self.timer_callback)  # 1 Hz timer
+        # Timer for inference
+        self.timer = rospy.Timer(rospy.Duration(0.2), self.timer_callback)  # ros timer
 
         # Variables for performance evaluation
         self.current_image = None
