@@ -14,6 +14,15 @@ To ensure the latest dependencies and libraries are installed, update your Docke
 ```
 $ docker pull hrcnthu/camera_ros:ipc-20.04
 ```
+## Build your workspace in docker
+When the catkin_ws add new rospackage or new c++ code, you need to rebuild your workspace for using the new functions.
+```
+$ cd ~/Deep_learning_d415
+~/Deep_learning_d415$ source gpu_run.sh # you need to make this terminal as the first terminal to get into docker
+~/Deep_learning_d415# cd catkin_ws
+~/Deep_learning_d415/catkin_ws# catkin build # rebuild the workspace
+~/Deep_learning_d415/catkin_ws# source ~/Deep_learning_d415/set_env_param.sh
+```
 
 # How to Run (Running Inference with a Pretrained Model)
 
