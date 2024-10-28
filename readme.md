@@ -32,7 +32,7 @@ $ cd ~/Deep_learning_d415
 * Check the device you are using (if you have gpu please use gpu_run.sh, if you are none-gpu device, use cpu_run.sh)
 ```
 $ cd ~/Deep_learning_d415
-~/Deep_learning_d415$ source gpu_run.sh / source cpu_run.sh
+~/Deep_learning_d415$ source gpu_run.sh (for running detection model locally)/ source cpu_run.sh (only opening the D400 series camera)
 ~/Deep_learning_d415# cd catkin_ws
  ~/Deep_learning_d415/catkin_ws# catkin build 
 ```
@@ -58,6 +58,11 @@ You need to update the repo if the repo have new commits.
 $ cd ~/Deep_learning_d415
 ~/Deep_learning_d415$ git pull # This will pull the new commit to your local file.
 ~/Deep_learning_d415$ git submodule update --init --recursive # This will update the submodule of the repo.
+```
+# Update docker images
+Docker image need to be updated for new dependency or library are installed.
+```
+$ docker pull hrcnthu/camera_ros:ipc-20.04
 ```
 
 # How to run   
