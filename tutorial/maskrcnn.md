@@ -47,11 +47,10 @@ $ cd ~/Deep_learning_d415
 ~/Deep_learning_d415$ source docker_join.sh 
 ~/Deep_learning_d415# source check_maskrcnn.sh
 ```
-The detection results will display on the right-hand side.
-
+The detection results and original will display on the top of window.
 
 ## Case2: Using Colab for Online Resources
-If you prefer to use online resources, check this Colab notebook: [maskrcnn_tutorial.ipynb](https://colab.research.google.com/drive/1bfrT6zPpv6CYZ2ITMb3698nsrlaHv2p7?usp=drive_link)  
+If you prefer to use online resources, check this Colab notebook after you turn your bag to mp4: [maskrcnn_tutorial.ipynb](https://colab.research.google.com/drive/1bfrT6zPpv6CYZ2ITMb3698nsrlaHv2p7?usp=drive_link)  
 Ensure the bag file path and name are correctly specified in the script [~/Deep_learning_d415/bags/turn_bag_to_mp4.py]  
 You can also update the output path and file name if needed.
 
@@ -71,6 +70,7 @@ If you encounter file permission issues (such as files showing a lock icon), use
 After running this, the lock icon should disappear.
 
 ### Upload the MP4 to Colab
+Check this Colab notebook: [maskrcnn_tutorial.ipynb](https://colab.research.google.com/drive/1bfrT6zPpv6CYZ2ITMb3698nsrlaHv2p7?usp=drive_link)
 Once you’ve successfully converted the bag file to an MP4 video, upload it to Colab for online inference.  
 Note: Do not use "Run All"; execute each cell individually to monitor the process.  
 After inference, the result video will appear on the left side of Colab. Download it to review the detection results.  
