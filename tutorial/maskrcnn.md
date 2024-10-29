@@ -27,7 +27,9 @@ $ cd ~/Deep_learning_d415
 # How to Run (Running Inference with a Pretrained Model)
 
 ## Case 1: Real-time Detection
-For real-time detection, make sure the camera is active. 
+
+### **For real-time detection, make sure the camera is active (check [D415_tutorial](https://github.com/hrc-pme/Deep_learning_d415/tree/main)) !!!**
+
 
 ### Terminal: Start Real-time Mask R-CNN Inference
 ```
@@ -49,8 +51,8 @@ The detection results will display on the right-hand side.
 
 
 ## Case2: Using Colab for Online Resources
-If you prefer to use online resources, check this Colab notebook: [maskrcnn_tutorial.ipynb](https://colab.research.google.com/drive/1z4wxg82yC-eabEtts8WfO-8EfFlobfLn?usp=sharing)  
-Ensure the bag file path and name are correctly specified in the script [~/Deep_learning_d415/bags/turn_bag_to_mp4.py]
+If you prefer to use online resources, check this Colab notebook: [maskrcnn_tutorial.ipynb](https://colab.research.google.com/drive/1bfrT6zPpv6CYZ2ITMb3698nsrlaHv2p7?usp=drive_link)  
+Ensure the bag file path and name are correctly specified in the script [~/Deep_learning_d415/bags/turn_bag_to_mp4.py]  
 You can also update the output path and file name if needed.
 
 ### Terminal: Convert ROS Bags to MP4 Video
