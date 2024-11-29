@@ -184,12 +184,7 @@ RUN pip3 install \
 RUN pip3 install \
     "mkdocstrings[python]"
 
-# tf 2.5.0 --> cuda 11.2
-RUN pip3 install \
-    tensorflow==2.4.0  \
-    tensorflow-estimator==2.4.0 \
-    tensorflow-probability==0.12.0 \
-    trfl==1.1.0 
+
 
 ######################################## Gazebo env########################################
 RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -o Acquire::ForceIPv4=true install --no-install-recommends -y \
