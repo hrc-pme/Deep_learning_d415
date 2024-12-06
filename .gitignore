@@ -16,3 +16,9 @@ csv/*
 
 catkin_ws/logs/*
 catkin_ws/.catkin_tools/
+
+# ignore folder with dataset 
+*dataset*/
+
+#ignore the file contain *output* in training folder (weight, outputs)
+Training/*output*
