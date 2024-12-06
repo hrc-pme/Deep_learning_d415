@@ -4,17 +4,36 @@ import numpy as np
 import glob
 from labelme import utils
 from PIL import Image, ImageDraw
-# How to use: python3 labelmecoco.py /path/to/labelme /path/to/output/coco.json
+import argparse
 
 class Labelme2COCO:
-    def __init__(self, labelme_folder, save_json_path, categories):
-        """
-        Convert Labelme annotations to COCO format.
+    """
+    Convert Labelme annotations to COCO format.
 
-        :param labelme_folder: Folder containing Labelme JSON files.
-        :param save_json_path: Path to save the output COCO JSON file.
-        :param categories: Predefined categories in COCO format.
-        """
+    This script processes a folder of Labelme JSON files, extracts annotations,
+    and saves them in COCO format.
+
+    Parameters:
+        labelme_folder (str): Path to folder containing Labelme JSON files.
+        save_json_path (str): Path to output COCO JSON file.
+        categories (list): List of predefined COCO categories.
+
+    COCO Format:
+        - Images: Metadata about each image (id, file_name, dimensions).
+        - Annotations: Object information including bbox, segmentation, and category.
+        - Categories: Predefined object categories.
+
+    Usage:
+        python labelme2coco.py --labelme_folder <path_to_labelme_folder> --output_json <path_to_output_json>
+        
+    Important:
+        - Define the categories to match your dataset's labels.
+        - Ensure all labels in Labelme annotations are present in the `categories` list.
+
+    Example:
+        python labelme2coco.py --labelme_folder ./dataset --output_json ./output/coco.json
+    """
+    def __init__(self, labelme_folder, save_json_path, categories):
         self.labelme_folder = labelme_folder
         self.save_json_path = save_json_path
         self.categories = categories
@@ -66,7 +85,6 @@ class Labelme2COCO:
             raise ValueError(f"Label '{label}' not found in predefined categories.")
 
         # Flatten points for segmentation
-        # segmentation = [list(np.asarray(points).flatten())]
         segmentation = []
 
         # Calculate bounding box (min x, min y, width, height)
@@ -92,16 +110,12 @@ class Labelme2COCO:
             "iscrowd": 0,
         }
 
-
-        
-
-
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Convert Labelme JSON files to COCO JSON.")
-    parser.add_argument("labelme_folder", type=str, help="Path to folder containing Labelme JSON files.")
-    parser.add_argument("output_json", type=str, help="Path to output COCO JSON file.")
+    parser = argparse.ArgumentParser(description="Convert Labelme JSON files to COCO JSON format.")
+    parser.add_argument("--labelme_folder", type=str, default="./labelme_data", 
+                        help="Path to folder containing Labelme JSON files. Default is './labelme_data'.")
+    parser.add_argument("--output_json", type=str, default="./output/coco.json", 
+                        help="Path to output COCO JSON file. Default is './output/coco.json'.")
     args = parser.parse_args()
 
     # Define the categories as per your use case
