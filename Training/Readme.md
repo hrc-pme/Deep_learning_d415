@@ -88,7 +88,7 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 ---
 4. **`split_coco.py`: Split COCO Dataset into Training and Validation Sets**
 
-   This script splits a COCO dataset into training and validation sets based on a specified train-validation ratio. 
+   This script splits a COCO dataset into training and validation sets based on a specified train-validation ratio.  
    It creates new COCO JSON files for each split and organizes the corresponding images into separate directories.
 
    **Usage**:
@@ -130,8 +130,8 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
 ## Training
 ### Dataset download (cable dataset)
-We use the cable dataset as example to finetune the detection model.
-The raw dataset can download from [cable_dataset](https://terabox.com/s/1wrH4PxaigWWPP-yZ2x8pAw)
+We use the cable dataset as example to finetune the detection model.  
+The raw dataset can download from [cable_dataset](https://terabox.com/s/1wrH4PxaigWWPP-yZ2x8pAw)  
 After preparing the dataset we will start training the model (finetuning from the pretrain model), now we have 4 examples for finetuning the model.
 1. train.py: in this code, we use the base dataset to finetune the "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x" model.
 2. train_augmentv1.py: in this code, we use data augmentation method to expand our dataset to finetune the segmentation model.
