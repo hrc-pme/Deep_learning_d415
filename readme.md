@@ -9,7 +9,6 @@ With this repo you can
 ```
 $: means command use in terminal  
 #: means command use in docker terminal  
-
 ```
 ## 1.Clone the repo
 ```
@@ -101,3 +100,4 @@ use Ctrl + C to stop recording
 You can find the bag file in ~/Deep_learning_d415/bags.
 
 * For futher usage of detection you can check [Mask R-CNN Detection with Detectron2](https://github.com/hrc-pme/Deep_learning_d415/blob/main/tutorial/maskrcnn.md)
+* For training a detection model, check [Train with Detectron2](https://github.com/hrc-pme/Deep_learning_d415/tree/main/Training)
