@@ -127,6 +127,13 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
    - Copies images to their respective directories for each split.
    - Filters and saves annotations for training and validation splits.
 ---
-## Training
 
-After preparing the dataset we will start training the model (finetuning from the pretrain model), now have 
+## Training
+### Dataset download (cable dataset)
+We use the cable dataset as example to finetune the detection model.
+The raw dataset can download from [cable_dataset](https://terabox.com/s/1wrH4PxaigWWPP-yZ2x8pAw)
+After preparing the dataset we will start training the model (finetuning from the pretrain model), now we have 4 examples for finetuning the model.
+1. train.py: in this code, we use the base dataset to finetune the "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x" model.
+2. train_augmentv1.py: in this code, we use data augmentation method to expand our dataset to finetune the segmentation model.
+3. train_bbox.py: in this code, we tune the model with two dataset one for large cable dataset another is our own labeled dataset to tune the bbox detection model.
+4. train_bbox_v2.py: in this code, we only tune the bbox detection model for our own labeled dataset.
