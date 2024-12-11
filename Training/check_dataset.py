@@ -12,7 +12,7 @@ def main(json_file, image_root):
     By default, it uses preset paths for `json_file` and `image_root`.
 
     Usage:
-        python script.py --json_file <path_to_annotations_file> --image_root <path_to_image_directory>
+        python3 check_dataset.py --json_file <path_to_annotations_file> --image_root <path_to_image_directory>
 
     Parameters:
     -----------
@@ -26,7 +26,7 @@ def main(json_file, image_root):
 
     Example:
     --------
-    python script.py --json_file "../cable_dataset/train_added/coco_v2.json" --image_root "../cable_dataset/train_added/2024_1202"
+    python3 check_dataset.py --json_file "../cable_dataset/train_added/coco_v2.json" --image_root "../cable_dataset/train_added/2024_1202"
     """
 
     # Load COCO-style annotations

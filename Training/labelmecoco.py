@@ -24,14 +24,14 @@ class Labelme2COCO:
         - Categories: Predefined object categories.
 
     Usage:
-        python labelme2coco.py --labelme_folder <path_to_labelme_folder> --output_json <path_to_output_json>
+        python labelmecoco.py --labelme_folder <path_to_labelme_folder> --output_json <path_to_output_json>
         
     Important:
         - Define the categories to match your dataset's labels.
         - Ensure all labels in Labelme annotations are present in the `categories` list.
 
     Example:
-        python labelme2coco.py --labelme_folder ./dataset --output_json ./output/coco.json
+        python labelmecoco.py --labelme_folder ./dataset --output_json ./output/coco.json
     """
     def __init__(self, labelme_folder, save_json_path, categories):
         self.labelme_folder = labelme_folder

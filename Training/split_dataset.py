@@ -19,7 +19,7 @@ def main(input_coco_file, images_folder, output_train_file, output_valid_file,
         train_ratio (float): Ratio of images to use for training (between 0 and 1).
 
     Example Usage:
-        python split_coco.py --input_coco_file ../cable_dataset/train_added/coco_v2.json \
+        python split_dataset.py --input_coco_file ../cable_dataset/train_added/coco_v2.json \
                              --images_folder ../cable_dataset/train_added/2024_1202 \
                              --output_train_file ../cable_dataset/train_added/coco_split_train.json \
                              --output_valid_file ../cable_dataset/train_added/coco_split_valid.json \

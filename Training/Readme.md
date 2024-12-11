@@ -39,7 +39,7 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Usage**:
    ```bash
-   python3 check_dataset.py --coco_json /path/to/output/coco.json
+   python3 check_dataset.py --json_file <path_to_annotations_file> --image_root <path_to_image_directory>
    ```
 
    **Parameters**:
@@ -47,7 +47,7 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Example**:
    ```bash
-   python3 check_dataset.py --coco_json ./output/coco.json
+   python3 check_dataset.py --json_file "../cable_dataset/train_added/coco_v2.json" --image_root "../cable_dataset/train_added/2024_1202"
    ```
 
    **Functionality**:
@@ -66,7 +66,7 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Usage**:
    ```bash
-   python3 visualize_labelme.py --dataset_root <path_to_dataset_folder>
+   python check_labelme.py --dataset_root <path_to_dataset_folder>
    ```
 
    **Parameters**:
@@ -74,7 +74,7 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Example**:
    ```bash
-   python3 visualize_labelme.py --dataset_root ../cable_dataset/train_added/2024_1202
+   python3 check_labelme.py --dataset_root ../cable_dataset/train_added/2024_1202
    ```
 
    **Functionality**:
@@ -93,13 +93,13 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Usage**:
    ```bash
-   python3 split_coco.py --input_coco_file <path_to_input_coco_json> \
-                         --images_folder <path_to_images_folder> \
-                         --output_train_file <path_to_save_train_json> \
-                         --output_valid_file <path_to_save_valid_json> \
-                         --output_train_images <path_to_train_images_folder> \
-                         --output_valid_images <path_to_valid_images_folder> \
-                         --train_ratio <train_validation_ratio>
+   python3 split_dataset.py --input_coco_file <path_to_input_coco_json> \
+                            --images_folder <path_to_images_folder> \
+                            --output_train_file <path_to_save_train_json> \
+                            --output_valid_file <path_to_save_valid_json> \
+                            --output_train_images <path_to_train_images_folder> \
+                            --output_valid_images <path_to_valid_images_folder> \
+                            --train_ratio <train_validation_ratio>
    ```
 
    **Parameters**:
@@ -113,13 +113,13 @@ The dataset must be in COCO format to be compatible with the Detectron2 framewor
 
    **Example**:
    ```bash
-   python3 split_coco.py --input_coco_file ../cable_dataset/train_added/coco_v2.json \
-                         --images_folder ../cable_dataset/train_added/2024_1202 \
-                         --output_train_file ../cable_dataset/train_added/coco_split_train.json \
-                         --output_valid_file ../cable_dataset/train_added/coco_split_valid.json \
-                         --output_train_images ../cable_dataset/train_added_split/train \
-                         --output_valid_images ../cable_dataset/train_added_split/valid \
-                         --train_ratio 0.8
+   python3 split_dataset.py --input_coco_file ../cable_dataset/train_added/coco_v2.json \
+                            --images_folder ../cable_dataset/train_added/2024_1202 \
+                            --output_train_file ../cable_dataset/train_added/coco_split_train.json \
+                            --output_valid_file ../cable_dataset/train_added/coco_split_valid.json \
+                            --output_train_images ../cable_dataset/train_added_split/train \
+                            --output_valid_images ../cable_dataset/train_added_split/valid \
+                            --train_ratio 0.8
    ```
 
    **Functionality**:

@@ -85,7 +85,7 @@ if __name__ == "__main__":
     Visualize annotations from LabelMe JSON files for all images in a specified dataset folder.
 
     Usage:
-        python script.py --dataset_root <path_to_dataset_folder>
+        python check_labelme.py --dataset_root <path_to_dataset_folder>
 
     Parameters:
         --dataset_root (str): Path to the root folder containing JSON and image files.
